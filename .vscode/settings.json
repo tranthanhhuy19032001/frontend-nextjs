@@ -7,5 +7,6 @@
     "[css]": {
         "editor.defaultFormatter": "aeschli.vscode-css-formatter"
     },
-    "prettier.tabWidth": 4
+    "prettier.tabWidth": 4,
+    "editor.formatOnSaveMode": "modifications"
 }
