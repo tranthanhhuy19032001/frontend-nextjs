@@ -17,13 +17,17 @@ export default function Menu({
     const current = history[history.length - 1]
 
     const renderItems = () => {
-        return current.data.map((item: any, index: any) => {
+        return current.data.map((item: any, index: number) => {
             const isParent = !!item.children
-
             return (
                 <MenuItem
                     key={index}
                     data={item}
+                    className={
+                        item.icon &&
+                        item.icon.props.src &&
+                        'border-y-2 font-bold py-3'
+                    }
                     onClick={() => {
                         if (isParent) {
                             setHistory((prev) => [...prev, item.children])
@@ -45,12 +49,8 @@ export default function Menu({
             offset={[12, 8]}
             placement="bottom-end"
             render={(attrs) => (
-                <div
-                    className="border-2 rounded mt-3 shadow-md z-10"
-                    tabIndex={-1}
-                    {...attrs}
-                >
-                    <PopperWrapper className="">
+                <div className="border-2 rounded mt-3" tabIndex={-1} {...attrs}>
+                    <PopperWrapper className="w-full shadow-md z-10">
                         {history.length > 1 && (
                             <Header
                                 title="Language"

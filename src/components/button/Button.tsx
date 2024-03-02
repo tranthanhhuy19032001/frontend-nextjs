@@ -46,7 +46,7 @@ function Button({
     return (
         <Comp className={classes} {...props}>
             {leftIcon && (
-                <span className="inline-block w-6 text-center">{leftIcon}</span>
+                <span className="inline-block w-6 h-5">{leftIcon}</span>
             )}
             <span className="ml-2">{children}</span>
             {rightIcon && (

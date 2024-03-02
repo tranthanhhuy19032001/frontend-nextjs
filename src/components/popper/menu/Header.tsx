@@ -9,11 +9,14 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title, onBack }) => {
     return (
-        <header className="">
-            <button className="" onClick={onBack}>
-                <FontAwesomeIcon icon={faChevronLeft} />
+        <header className="relative w-40">
+            <button
+                className="flex hover:bg-slate-700 w-full pl-2"
+                onClick={onBack}
+            >
+                <FontAwesomeIcon icon={faChevronLeft} className="mt-1.5" />
+                <h4 className="text-lg">{title}</h4>
             </button>
-            <h4 className="">{title}</h4>
         </header>
     )
 }
