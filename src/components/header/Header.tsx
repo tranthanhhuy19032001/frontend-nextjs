@@ -4,15 +4,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faEllipsisVertical,
-  faCircleQuestion,
-  faEarthAsia,
-  faKeyboard,
-  faUser,
-  faCoins,
-  faGear,
-  faSignOut,
-} from "@fortawesome/free-solid-svg-icons";
+    faEllipsisVertical,
+    faCircleQuestion,
+    faEarthAsia,
+    faKeyboard,
+    faUser,
+    faCoins,
+    faGear,
+    faSignOut,
+} from '@fortawesome/free-solid-svg-icons'
 
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import Search from "../search/Search";
@@ -89,40 +89,40 @@ export default function Header() {
     },
   ];
   return (
-    <header className="relative flex justify-between items-center px-8 py-5 border-y">
-      <Link href="/" className="font-bold text-3xl flex">
-        <Image src={Logo} alt="Logo" width={30} height={30} />
-        <div className="max-[640px]:hidden md:block">
-          Tech<span className="text-blue-600">Blog</span>
-        </div>
-      </Link>
-      <nav className="flex gap-3 max-[640px]:hidden max-[768px]:hidden lg:block">
-        <Link href={`/my-feed`}>My Feed</Link>
-        <Link href={`/my-feed`}>Discussion</Link>
-        <Link href={`/my-feed`}>More</Link>
-      </nav>
-      <div className="flex gap-2 items-center">
-        <Search />
-        <Write>Write</Write>
-        <ThemeToggle />
-        <ButtonNotification countNofications="3" />
-        <div>
-          <Menu
-            items={currentUser ? userMenu : MENU_ITEMS}
-            onChange={handleMenuChange}
-          >
-            {currentUser ? (
-              <button className="more-btn">
-                <FontAwesomeIcon icon={faUser} />
-              </button>
-            ) : (
-              <button className="more-btn">
-                <FontAwesomeIcon icon={faEllipsisVertical} />
-              </button>
-            )}
-          </Menu>
-        </div>
-      </div>
-    </header>
-  );
+      <header className="relative flex justify-between items-center px-8 py-2 border-y">
+          <Link href="/" className="font-bold text-3xl flex">
+              <Image src={Logo} alt="Logo" width={30} height={30} />
+              <div className="max-[640px]:hidden md:block">
+                  Tech<span className="text-blue-600">Blog</span>
+              </div>
+          </Link>
+          <nav className="flex gap-3 max-[640px]:hidden max-[768px]:hidden lg:block">
+              <Link href={`/my-feed`}>My Feed</Link>
+              <Link href={`/my-feed`}>Discussion</Link>
+              <Link href={`/my-feed`}>More</Link>
+          </nav>
+          <div className="flex gap-2 items-center">
+              <Search />
+              <Write>Write</Write>
+              <ThemeToggle />
+              <ButtonNotification countNofications="3" />
+              <div>
+                  <Menu
+                      items={currentUser ? userMenu : MENU_ITEMS}
+                      onChange={handleMenuChange}
+                  >
+                      {currentUser ? (
+                          <button className="more-btn">
+                              <FontAwesomeIcon icon={faUser} />
+                          </button>
+                      ) : (
+                          <button className="more-btn">
+                              <FontAwesomeIcon icon={faEllipsisVertical} />
+                          </button>
+                      )}
+                  </Menu>
+              </div>
+          </div>
+      </header>
+  )
 }
