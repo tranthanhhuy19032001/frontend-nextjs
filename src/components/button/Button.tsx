@@ -45,18 +45,15 @@ function Button({
     const classes =
         `${className} ${disabled ? 'opacity-50 pointer-events-none' : ''}`.trim()
 
-    console.log('isAccount', isAccount)
     return (
         <Comp className={classes} {...props}>
-            <span className="flex items-center">
-                {leftIcon && <span className="inline-block">{leftIcon}</span>}
-                <span className={`ml-2 ${isAccount && ''}`}>{children}</span>
-                {rightIcon && (
-                    <span className="inline-block w-6 text-center">
-                        {rightIcon}
-                    </span>
-                )}
-            </span>
+            {leftIcon && <span className="inline-block">{leftIcon}</span>}
+            <span className={`ml-2 ${isAccount && ''}`}>{children}</span>
+            {rightIcon && (
+                <span className="inline-block w-6 text-center">
+                    {rightIcon}
+                </span>
+            )}
         </Comp>
     )
 }
