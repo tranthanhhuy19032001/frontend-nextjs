@@ -19,15 +19,19 @@ export default function Menu({
     const renderItems = () => {
         return current.data.map((item: any, index: number) => {
             const isParent = !!item.children
+
+            let classes = ''
+            let isAccount = false
+            if (item.icon && !item.icon.props.icon) {
+                classes = 'border-y-2 font-bold'
+                isAccount = true
+            }
             return (
                 <MenuItem
                     key={index}
                     data={item}
-                    className={
-                        item.icon &&
-                        item.icon.props.src &&
-                        'border-y-2 font-bold py-3'
-                    }
+                    className={classes}
+                    isAccount={isAccount}
                     onClick={() => {
                         if (isParent) {
                             setHistory((prev) => [...prev, item.children])
@@ -44,7 +48,7 @@ export default function Menu({
         <Tippy
             arrow={true}
             interactive
-            visible={true}
+            // visible={true}
             delay={[0, 600]}
             offset={[12, 8]}
             placement="bottom-end"

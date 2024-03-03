@@ -20,6 +20,8 @@ import Logo from "../../../public/svg/logo.svg";
 import Write from "../write/Write";
 import ButtonNotification from "../notification/ButtonNotification";
 import Menu from "../popper/menu/Menu";
+import { AvatarProfile } from '../avatar/Avatar'
+import Button from '../button/Button'
 
 const MENU_ITEMS = [
     {
@@ -66,15 +68,7 @@ export default function Header() {
 
     const userMenu = [
         {
-            icon: (
-                <Image
-                    src="https://gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50"
-                    alt="Profile image"
-                    width={24}
-                    height={28}
-                    className="w-7 h-auto"
-                />
-            ),
+            icon: <AvatarProfile />,
             title: 'Thanh Huy',
             to: '/@thanh-huy',
         },
@@ -126,9 +120,11 @@ export default function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <button className="more-btn">
-                                <FontAwesomeIcon icon={faUser} />
-                            </button>
+                            <div>
+                                <Button>
+                                    <AvatarProfile />
+                                </Button>
+                            </div>
                         ) : (
                             <button className="more-btn">
                                 <FontAwesomeIcon icon={faEllipsisVertical} />
