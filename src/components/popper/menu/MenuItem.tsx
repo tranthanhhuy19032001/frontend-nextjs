@@ -17,7 +17,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
     return (
         <Button
             href={data.to}
-            className={`${className} block p-2 hover:bg-slate-300 hover:text-red-400 w-full text-left`}
+            className={`${className} p-2 hover:bg-slate-300 hover:text-red-400 w-full text-left flex items-center`}
             isAccount={isAccount}
             leftIcon={data.icon}
             onClick={onClick}

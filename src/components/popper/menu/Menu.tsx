@@ -53,7 +53,7 @@ export default function Menu({
             offset={[12, 8]}
             placement="bottom-end"
             render={(attrs) => (
-                <div className="border-2 rounded mt-3" tabIndex={-1} {...attrs}>
+                <div className="border-2 rounded mt-2" tabIndex={-1} {...attrs}>
                     <PopperWrapper className="w-full shadow-md z-10">
                         {history.length > 1 && (
                             <Header

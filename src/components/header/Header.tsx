@@ -91,7 +91,7 @@ export default function Header() {
         },
     ]
     return (
-        <header className="relative flex justify-between items-center px-8 py-2 border-y">
+        <header className="relative flex justify-between items-center px-16 py-2 border-y">
             <Link href="/" className="font-bold text-3xl flex">
                 <Image
                     src={Logo}
@@ -121,7 +121,7 @@ export default function Header() {
                     >
                         {currentUser ? (
                             <div>
-                                <Button>
+                                <Button className="flex items-center">
                                     <AvatarProfile />
                                 </Button>
                             </div>
