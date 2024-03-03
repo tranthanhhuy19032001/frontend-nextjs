@@ -8,18 +8,23 @@ import {
     faCircleQuestion,
     faEarthAsia,
     faKeyboard,
-    faUser,
     faCoins,
     faGear,
     faSignOut,
+    faChevronDown,
 } from '@fortawesome/free-solid-svg-icons'
 
-import ThemeToggle from "../themeToggle/ThemeToggle";
-import Search from "../search/Search";
-import Logo from "../../../public/svg/logo.svg";
-import Write from "../write/Write";
-import ButtonNotification from "../notification/ButtonNotification";
-import Menu from "../popper/menu/Menu";
+import {
+    faCompass,
+    faCircleQuestion as faCircleQuestionRegular,
+} from '@fortawesome/free-regular-svg-icons'
+
+import ThemeToggle from '../themeToggle/ThemeToggle'
+import Search from '../search/Search'
+import Logo from '../../../public/svg/logo.svg'
+import Write from '../write/Write'
+import ButtonNotification from '../notification/ButtonNotification'
+import Menu from '../popper/menu/Menu'
 import { AvatarProfile } from '../avatar/Avatar'
 import Button from '../button/Button'
 
@@ -51,6 +56,19 @@ const MENU_ITEMS = [
     {
         icon: <FontAwesomeIcon icon={faKeyboard} />,
         title: 'Keyboard shortcuts',
+    },
+]
+
+const MORE_ITEMS = [
+    {
+        icon: <FontAwesomeIcon icon={faCompass} />,
+        title: 'Explore',
+        to: '/explore',
+    },
+    {
+        icon: <FontAwesomeIcon icon={faCircleQuestionRegular} />,
+        title: 'Suppport',
+        to: '/support',
     },
 ]
 export default function Header() {
@@ -104,11 +122,36 @@ export default function Header() {
                     Tech<span className="text-blue-600">Blog</span>
                 </div>
             </Link>
-            <nav className="flex gap-3 max-[640px]:hidden max-[768px]:hidden lg:block">
-                <Link href={`/my-feed`}>My Feed</Link>
-                <Link href={`/my-feed`}>Discussion</Link>
-                <Link href={`/my-feed`}>More</Link>
+            <nav className="flex space-x-5 max-[640px]:hidden max-[800px]:hidden lg:block max-[1120px]:space-x-0">
+                <Button
+                    href="my-feed"
+                    className="text-blue-600 font-semibold border-2 border-transparent py-2 px-4 rounded-3xl transition-all duration-300 hover:border-blue-600 max-[1200px]:px-1"
+                >
+                    My Feed
+                </Button>
+                <Button
+                    href="/discussion"
+                    className="text-blue-600 font-semibold border-2 border-transparent py-2 px-4 rounded-3xl transition-all duration-300 hover:border-blue-600 max-[1200px]:px-1"
+                >
+                    Disscussion
+                </Button>
+
+                <Menu
+                    items={MORE_ITEMS}
+                    onChange={() => {}}
+                    className="mt-3.5 w-40"
+                >
+                    <span>
+                        <Button
+                            rightIcon={<FontAwesomeIcon icon={faChevronDown} />}
+                            className="text-blue-600 font-semibold border-2 border-transparent py-2 px-4 rounded-3xl transition-all duration-300 hover:border-blue-600 max-[1200px]:px-1"
+                        >
+                            More
+                        </Button>
+                    </span>
+                </Menu>
             </nav>
+
             <div className="flex gap-2 items-center">
                 <Search />
                 <Write>Write</Write>

@@ -8,11 +8,7 @@ import Header from './Header'
 
 const defaultFn = () => {}
 
-export default function Menu({
-    children,
-    items = [],
-    onChange = defaultFn,
-}: any) {
+export default function Menu({ children, items = [], className, onChange = defaultFn }: any) {
     const [history, setHistory] = useState([{ data: items }])
     const current = history[history.length - 1]
 
@@ -48,12 +44,16 @@ export default function Menu({
         <Tippy
             arrow={true}
             interactive
-            // visible={true}
+            visible={true}
             delay={[0, 600]}
             offset={[12, 8]}
             placement="bottom-end"
             render={(attrs) => (
-                <div className="border-2 rounded mt-2" tabIndex={-1} {...attrs}>
+                <div
+                    className={`border-2 rounded mt-2 z-10 bg-gray-100 ${className} `}
+                    tabIndex={-1}
+                    {...attrs}
+                >
                     <PopperWrapper className="w-full shadow-md z-10">
                         {history.length > 1 && (
                             <Header
