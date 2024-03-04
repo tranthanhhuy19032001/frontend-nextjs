@@ -19,7 +19,8 @@ export default function Menu({ children, items = [], className, onChange = defau
             let classes = ''
             let isAccount = false
             if (item.icon && !item.icon.props.icon) {
-                classes = 'border-y-2 font-bold'
+                classes =
+                    'border border-solid font-bold dark:border-slate-800/100'
                 isAccount = true
             }
             return (
@@ -44,17 +45,17 @@ export default function Menu({ children, items = [], className, onChange = defau
         <Tippy
             arrow={true}
             interactive
-            visible={true}
+            // visible={true}
             delay={[0, 600]}
             offset={[12, 8]}
             placement="bottom-end"
             render={(attrs) => (
                 <div
-                    className={`border-2 rounded mt-2 z-10 bg-gray-100 ${className} `}
+                    className={`border border-solid rounded mt-1 dark:border dark:border-slate-800/100 ${className} `}
                     tabIndex={-1}
                     {...attrs}
                 >
-                    <PopperWrapper className="w-full shadow-md z-10">
+                    <PopperWrapper className="z-50 w-full shadow-md dark:shadow-slate-800/100">
                         {history.length > 1 && (
                             <Header
                                 title="Language"

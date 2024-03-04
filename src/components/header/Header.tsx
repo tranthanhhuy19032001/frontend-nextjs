@@ -19,7 +19,7 @@ import {
     faCircleQuestion as faCircleQuestionRegular,
 } from '@fortawesome/free-regular-svg-icons'
 
-import ThemeToggle from '../themeToggle/ThemeToggle'
+
 import Search from '../search/Search'
 import Logo from '../../../public/svg/logo.svg'
 import Write from '../write/Write'
@@ -27,6 +27,7 @@ import ButtonNotification from '../notification/ButtonNotification'
 import Menu from '../popper/menu/Menu'
 import { AvatarProfile } from '../avatar/Avatar'
 import Button from '../button/Button'
+import { ThemeToggle } from '../themeToggle/ThemeToggle'
 
 const MENU_ITEMS = [
     {
@@ -109,7 +110,7 @@ export default function Header() {
         },
     ]
     return (
-        <header className="relative flex justify-between items-center px-16 py-2 border-y">
+        <header className="relative flex justify-between items-center px-16 py-2 border-y dark:border-slate-200">
             <Link href="/" className="font-bold text-3xl flex">
                 <Image
                     src={Logo}
@@ -139,7 +140,7 @@ export default function Header() {
                 <Menu
                     items={MORE_ITEMS}
                     onChange={() => {}}
-                    className="mt-3.5 w-40"
+                    className="z-60 mt-2 w-40"
                 >
                     <span>
                         <Button
