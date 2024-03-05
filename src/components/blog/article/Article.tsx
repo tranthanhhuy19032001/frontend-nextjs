@@ -29,7 +29,7 @@ export default function Article({ children }: any) {
                         Create Instagram-like Long Press and Draggable Carousel
                         Indicators in Jetpack Compose.
                     </h3>
-                    <p className="h-12 overflow-hidden overflow-ellipsis line-clamp-2">
+                    <p className="max-h-12 overflow-hidden overflow-ellipsis line-clamp-2">
                         We must have used this UX in the Instagram mobile app,
                         where we can long press the carousel indicators section
                         and
