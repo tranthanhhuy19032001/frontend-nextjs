@@ -9,6 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     leftIcon?: ReactNode
     rightIcon?: ReactNode
     isAccount?: boolean
+    onClick?: () => void
 }
 
 function Button({

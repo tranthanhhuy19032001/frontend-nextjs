@@ -1,4 +1,4 @@
-'user client'
+'use client'
 
 import Button from '@/components/button/Button'
 import ArticleItem from './ArticleItem'
@@ -7,7 +7,7 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 export default function TrendingArticle(params: any) {
     // handle expand article on trending area
-    const onClickSeemore = () => {
+    const onSeemore = () => {
         console.log('See more!')
     }
 
@@ -17,7 +17,7 @@ export default function TrendingArticle(params: any) {
             <ArticleItem />
             <ArticleItem />
             <Button
-                // onClick={onClickSeemore}
+                onClick={onSeemore}
                 className="w-full py-2 border border-solid rounded-3xl mt-3 hover:bg-slate-50 hover:dark:bg-slate-800"
                 rightIcon={<FontAwesomeIcon icon={faChevronDown} />}
             >
