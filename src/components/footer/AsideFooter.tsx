@@ -8,7 +8,7 @@ import {
 
 export default function AsideFooter(params: any) {
     return (
-        <div className="p-5 border border-solid w-full mt-6 mb-6 rounded-2xl ">
+        <div className="p-5 border border-solid w-full mt-6 mb-6 rounded-2xl dark:border-slate-800">
             <div className="grid grid-cols-2 gap-y-2 text-sm">
                 <h3 className="col-span-2 font-medium text-base text-slate-700 dark:text-slate-200">
                     External links
@@ -40,21 +40,21 @@ export default function AsideFooter(params: any) {
                         href={'/instagram'}
                         className="border border-slate-200 rounded-full p-3 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800"
                     >
-                        <LinkedinIcon />
+                        <LinkedinIcon className="text-blue-500" />
                     </Link>
                     <Link
                         target="_blank"
                         href={'https://www.youtube.com/'}
                         className="border border-slate-200 rounded-full p-3 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800"
                     >
-                        <DiscordIcon />
+                        <DiscordIcon className="text-purple-500" />
                     </Link>
                     <Link
                         target="_blank"
                         href={'https://www.youtube.com/'}
                         className="border border-slate-200 rounded-full p-3 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800"
                     >
-                        <YoutubeIcon />
+                        <YoutubeIcon className="text-red-500" />
                     </Link>
                 </div>
             </div>

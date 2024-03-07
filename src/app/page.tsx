@@ -9,7 +9,7 @@ export default function Home() {
     const isUserPage: boolean = true
     return (
         <div>
-            <main className="flex justify-center">
+            <main className="flex justify-center mt-14">
                 {isUserPage ? <Body /> : ''}
             </main>
         </div>
