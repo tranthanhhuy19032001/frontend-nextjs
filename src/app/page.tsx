@@ -2,6 +2,7 @@ import Body from '@/components/body/Body'
 
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { config } from '@fortawesome/fontawesome-svg-core'
+// Turn off load css file when refresh
 config.autoAddCss = false
 
 export default function Home() {
