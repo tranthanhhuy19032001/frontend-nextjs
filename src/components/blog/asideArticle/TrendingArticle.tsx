@@ -5,11 +5,16 @@ import ArticleItem from './ArticleItem'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
-export default function TrendingArticle(params: any) {
+interface AsideAritleProps {
+    article?: []
+    onClick?: () => void
+}
+
+export default function TrendingArticle({
+    article,
+    onClick,
+}: AsideAritleProps) {
     // handle expand article on trending area
-    const onSeemore = () => {
-        console.log('See more!')
-    }
 
     return (
         <div className="p-5 border border-solid w-full mt-6 rounded-2xl">
@@ -17,8 +22,8 @@ export default function TrendingArticle(params: any) {
             <ArticleItem />
             <ArticleItem />
             <Button
-                onClick={onSeemore}
-                className="w-full py-2 border border-solid rounded-3xl mt-3 hover:bg-slate-50 hover:dark:bg-slate-800"
+                onClick={onClick}
+                className="w-full py-2 text-sm border border-solid rounded-3xl mt-3 hover:bg-slate-50 hover:dark:bg-slate-800"
                 rightIcon={<FontAwesomeIcon icon={faChevronDown} />}
             >
                 See more
