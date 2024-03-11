@@ -4,13 +4,13 @@ import MainBody from './mainBody/MainBody'
 
 export default function Body() {
     return (
-        <div className="container max-w-5xl flex justify-between gap-4">
+        <main className="container max-w-5xl flex justify-between gap-4 mt-14">
             <MainBody>
                 <Article />
                 <Article />
                 <Article />
             </MainBody>
             <Aside />
-        </div>
+        </main>
     )
 }
