@@ -8,5 +8,8 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "prettier.tabWidth": 4,
-    "editor.formatOnSaveMode": "modifications"
+    "editor.formatOnSaveMode": "modifications",
+    "[xml]": {
+        "editor.defaultFormatter": "Glavin001.unibeautify-vscode"
+    }
 }

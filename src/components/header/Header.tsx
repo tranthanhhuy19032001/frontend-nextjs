@@ -110,7 +110,7 @@ export default function Header() {
         },
     ]
     return (
-        <header className="relative flex justify-between items-center px-16 py-2 border-y dark:border-slate-200">
+        <header className="fixed top-0 w-full z-50 flex justify-between items-center px-16 py-2  bg-gray-100 dark:border-slate-200 dark:bg-slate-900">
             <Link href="/" className="font-bold text-3xl flex">
                 <Image
                     src={Logo}

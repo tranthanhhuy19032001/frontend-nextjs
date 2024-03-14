@@ -11,7 +11,7 @@ import Button from '@/components/button/Button'
 
 export default function Article({ children }: any) {
     return (
-        <article className="p-5 border border-solid w-full mt-6 rounded-2xl">
+        <article className="p-5 border border-solid w-full mt-6 rounded-2xl dark:border-slate-800">
             <header>
                 <Button
                     className="flex items-center text-start"

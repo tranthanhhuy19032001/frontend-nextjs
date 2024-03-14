@@ -24,9 +24,9 @@ export function ThemeToggle() {
             className="p-2 border-2 rounded-full border-transparent  hover:border-blue-600"
         >
             {isDarkMode ? (
-                <SunIcon className="h-[1.4rem] w-[1.4rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                <SunIcon className="h-[1.5rem] w-[1.5rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             ) : (
-                <MoonIcon className="h-[1.4rem] w-[1.4rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <MoonIcon className="h-[1.5rem] w-[1.5rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             )}
         </Button>
     )
