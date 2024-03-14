@@ -1,3 +1,5 @@
+'use client'
+
 import Body from '@/components/body/Body'
 
 import '@fortawesome/fontawesome-svg-core/styles.css'

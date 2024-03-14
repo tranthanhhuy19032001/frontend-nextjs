@@ -1,4 +1,6 @@
 'use client'
+
+import { useEffect } from 'react'
 import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import Head from 'next/head'
@@ -13,15 +15,20 @@ import Button from '@/components/button/Button'
 export default function LoginPage() {
     const { status } = useSession()
 
+    console.log('status:', status)
+
     const router = useRouter()
 
-    if (status === 'loading') {
-        return <div className="">Loading...</div>
-    }
+    // if (status === 'loading') {
+    //     return <div className="">Loading...</div>
+    // }
 
-    if (status === 'authenticated') {
-        router.push('/')
-    }
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useEffect(() => {
+        if (status === 'authenticated') {
+            router.push('/')
+        }
+    }, [status, router])
 
     return (
         <div className="min-h-screen flex items-center justify-center ">

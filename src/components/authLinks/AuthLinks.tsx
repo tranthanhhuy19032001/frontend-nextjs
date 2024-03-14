@@ -64,7 +64,6 @@ const userMenu = [
     {
         icon: <FontAwesomeIcon icon={faSignOut} />,
         title: 'Log out',
-        to: '/logout',
         separate: true,
     },
 ]
@@ -73,12 +72,19 @@ export default function AuthLinks(params: any) {
     const { status } = useSession()
 
     // Handle logic
-    const handleMenuChange = (menuItem: any) => {
+    const handleMenuChange = async (menuItem: any) => {
         switch (menuItem.type) {
             case 'language':
                 // Handle change language
                 break
             default:
+        }
+        if (menuItem.title == 'Log out') {
+            try {
+                await signOut({ redirect: false, callbackUrl: '/' })
+            } catch (error) {
+                console.log(error)
+            }
         }
     }
     return status === 'authenticated' ? (
