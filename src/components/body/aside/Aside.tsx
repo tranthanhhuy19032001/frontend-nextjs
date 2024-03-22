@@ -1,4 +1,6 @@
+import Bookmark from '@/components/blog/asideArticle/Bookmark'
 import TrendingArticle from '@/components/blog/trendingArticle/TrendingArticle'
+import AsideFooter from '@/components/footer/AsideFooter'
 
 export default function Aside() {
     return (
