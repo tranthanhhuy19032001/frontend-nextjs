@@ -1,9 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { useSession } from 'next-auth/react'
 
 export function AvatarProfile() {
+    const { data } = useSession()
     return (
         <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarImage src={data?.user?.image!} alt="@shadcn" />
             <AvatarFallback>CN</AvatarFallback>
         </Avatar>
     )
