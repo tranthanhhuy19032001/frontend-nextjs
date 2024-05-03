@@ -11,7 +11,9 @@ config.autoAddCss = false
 export default function Home() {
     return (
         <div>
-            <Header />
+            <div className="mb-16">
+                <Header />
+            </div>
             <Body />
         </div>
     )

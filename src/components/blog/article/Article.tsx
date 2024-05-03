@@ -8,14 +8,20 @@ import 'tippy.js/dist/tippy.css'
 
 import { AvatarProfile } from '@/components/avatar/Avatar'
 import Button from '@/components/button/Button'
+import Link from 'next/link'
 
-export default function Article({ children }: any) {
+interface ArticalProps {
+    article: any
+}
+
+export default function Article({ article }: ArticalProps) {
+    // Handle call API get User, Likes, Comments: TODO
     return (
         <article className="p-5 border border-solid w-full mt-6 rounded-2xl dark:border-slate-800">
             <header>
                 <Button
                     className="flex items-center text-start"
-                    leftIcon={<AvatarProfile />}
+                    leftIcon={<AvatarProfile src="" />}
                 >
                     <div>
                         <p>Tran Thanh Huy</p>
@@ -23,16 +29,18 @@ export default function Article({ children }: any) {
                     </div>
                 </Button>
             </header>
-            <div className="flex flex-row">
+            <Link
+                href={
+                    '/blog/' + article.title.toLowerCase().replace(/\s+/g, '-')
+                }
+                className="flex flex-row"
+            >
                 <div className="basis-2/3">
                     <h3 className="font-bold h-20 overflow-hidden overflow-ellipsis line-clamp-2">
-                        Create Instagram-like Long Press and Draggable Carousel
-                        Indicators in Jetpack Compose.
+                        {article.title}
                     </h3>
                     <p className="max-h-12 overflow-hidden overflow-ellipsis line-clamp-2">
-                        We must have used this UX in the Instagram mobile app,
-                        where we can long press the carousel indicators section
-                        and
+                        {article.description}
                     </p>
                 </div>
                 <div className="basis-1/3">
@@ -44,7 +52,7 @@ export default function Article({ children }: any) {
                         className="w-auto h-full"
                     />
                 </div>
-            </div>
+            </Link>
             <footer className="flex text-sm mt-3 justify-between">
                 <div className="flex gap-3 ">
                     <Button

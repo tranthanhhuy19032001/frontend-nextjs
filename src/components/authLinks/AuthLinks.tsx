@@ -46,7 +46,7 @@ const MENU_ITEMS = [
 
 const userMenu = [
     {
-        icon: <AvatarProfile />,
+        icon: <AvatarProfile src="" />,
         title: 'Thanh Huy',
         to: '/@thanh-huy',
     },
@@ -69,7 +69,7 @@ const userMenu = [
 ]
 
 export default function AuthLinks(params: any) {
-    const { status } = useSession()
+    const { status, data } = useSession()
 
     // Handle logic
     const handleMenuChange = async (menuItem: any) => {
@@ -94,7 +94,7 @@ export default function AuthLinks(params: any) {
         >
             <div>
                 <Button className="flex items-center">
-                    <AvatarProfile />
+                    <AvatarProfile src={data.user?.image!} />
                 </Button>
             </div>
         </Menu>
