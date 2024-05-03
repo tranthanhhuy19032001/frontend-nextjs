@@ -7,8 +7,8 @@ import { useState, useEffect } from 'react'
 import Button from '../button/Button'
 
 export function ThemeToggle() {
-    const { setTheme } = useTheme()
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const { setTheme, theme } = useTheme()
+    const [isDarkMode, setIsDarkMode] = useState(theme === 'dark' ? true : false)
 
     const onToggle = () => {
         setIsDarkMode(!isDarkMode)
