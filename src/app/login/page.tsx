@@ -1,15 +1,17 @@
 'use client'
 
-import { useEffect } from 'react'
 import { signIn, useSession } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
 import Head from 'next/head'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
-import { GoogleIcon, GithubIcon } from '@/components/icons/index'
-import Logo from '../../../public/svg/logo.svg'
 import Button from '@/components/button/Button'
+import { GithubIcon, GoogleIcon } from '@/components/icons/index'
+import Logo from '../../../public/svg/logo.svg'
+
+import userService from '@/apis/services/user/userService'
 
 export default function LoginPage() {
     const { status } = useSession()
@@ -28,6 +30,22 @@ export default function LoginPage() {
             router.push('/')
         }
     }, [status, router])
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const handleLogin = async () => {
+        const result = await userService.login({ username: email, password })
+
+        if (result.isSuccess) {
+            debugger
+            // Save token if needed, e.g., localStorage.setItem('token', result.data.token)
+            localStorage.setItem('token', result.data.accessToken)
+            router.push('/')
+        } else {
+            console.error('Login failed:', result.message)
+        }
+    }
 
     return (
         <div className="min-h-screen flex items-center justify-center ">
@@ -56,6 +74,8 @@ export default function LoginPage() {
                     <input
                         type="text"
                         placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         className="border border-solid border-gray-300 px-4 py-2 rounded-xl w-full bg-gray-100 focus:outline-none focus:border-blue-500"
                     />
                 </div>
@@ -63,11 +83,16 @@ export default function LoginPage() {
                     <input
                         type="password"
                         placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         className="border border-solid border-gray-300 px-4 py-2 rounded-xl w-full bg-gray-100 focus:outline-none focus:border-blue-500"
                     />
                 </div>
 
-                <Button className="mt-5 bg-blue-500 w-full text-white px-4 py-2 rounded-full font-semibold">
+                <Button
+                    className="mt-5 bg-blue-500 w-full text-white px-4 py-2 rounded-full font-semibold"
+                    onClick={handleLogin}
+                >
                     Sign in to your account
                 </Button>
                 <div className="flex items-center mt-5 opacity-60">
