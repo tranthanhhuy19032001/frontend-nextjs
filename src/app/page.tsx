@@ -2,9 +2,10 @@
 
 import Body from '@/components/body/Body'
 
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import { config } from '@fortawesome/fontawesome-svg-core'
+import ChatbotWidget from '@/components/chatbot/ChatbotWidget'
 import Header from '@/components/header/Header'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 // Turn off load css file when refresh
 config.autoAddCss = false
 
@@ -15,6 +16,7 @@ export default function Home() {
                 <Header />
             </div>
             <Body />
+            <ChatbotWidget />
         </div>
     )
 }
